@@ -34,9 +34,9 @@ public class MoveToGoalAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        ActionSegment<float> continousActions = actionsOut.ContinuousActions;
-        continousActions[0] = Input.GetAxisRaw("Horizontal");
-        continousActions[1] = Input.GetAxisRaw("Vertical");
+        //ActionSegment<float> continousActions = actionsOut.ContinuousActions;
+        //continousActions[0] = Input.GetAxisRaw("Horizontal");
+        //continousActions[1] = Input.GetAxisRaw("Vertical");
     }
 
     private void OnTriggerEnter(Collider other)
