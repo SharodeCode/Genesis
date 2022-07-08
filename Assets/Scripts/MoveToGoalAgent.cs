@@ -12,9 +12,11 @@ public class MoveToGoalAgent : Agent
     [SerializeField] private Material losematerial;
     [SerializeField] private MeshRenderer floorMeshRenderer;
 
+    public AmoebaController test;
+
     public override void OnEpisodeBegin()
     {
-        transform.localPosition = Vector3.zero;
+        //transform.localPosition = Vector3.zero;
     }
 
     public override void CollectObservations(VectorSensor sensor)

@@ -7,6 +7,7 @@ public class AmoebaController : MonoBehaviour
 
     public float speed = 5f;
     public float rotationSpeed = 5f;
+    public Gene myGene;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +23,17 @@ public class AmoebaController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float VerticalInput = Input.GetAxisRaw("Vertical");
+        ManualControl(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
 
+    public void ManualControl(float horizontalInput, float VerticalInput)
+    {
         Vector3 newPos = new Vector3(horizontalInput, 0, VerticalInput);
         newPos.Normalize();
 
         transform.Translate(newPos * speed * Time.deltaTime, Space.World);
 
-        if(newPos != Vector3.zero)
+        if (newPos != Vector3.zero)
         {
 
             Quaternion toRotation = Quaternion.LookRotation(newPos, Vector3.up);
@@ -39,4 +42,5 @@ public class AmoebaController : MonoBehaviour
 
         }
     }
+
 }
